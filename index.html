@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Para Meu Amor 💖</title>
+</head>
+    <link rel="stylesheet" href="style.css">
+<body>
+  <h1>Para o amor da minha vida, Mikaelly! 💘</h1>
+  <p id="timer">Contando os nossos momentos juntos...</p>
+  <div class="heart-bg"></div>
+
+  <audio controls>
+    <source src="img\tiktokio.com_D9377DCIx5VMbForU8Rn.mp3" type="audio/mpeg">
+  </audio>
+
+<div class="gallery">
+  <figure>
+    <img src="img/4f91aee9-8150-45e2-80a9-0a841f84bf57.jpg" alt="Foto 1" />
+    <figcaption>O momento mais importante pra gente durante todo esse tempo!</figcaption>
+  </figure>
+  <figure>
+    <img src="img/75198c8f-0d25-49f7-890e-fe76d8278a69.jpg" alt="Foto 2" />
+    <figcaption>Katchauu</figcaption>
+  </figure>
+  <figure>
+    <img src="img/8441bf00-64ef-4f7f-967a-fea0d89e6b85.jpg" alt="Foto 3" />
+    <figcaption>Dogss</figcaption>
+  </figure>
+  <figure>
+    <img src="img/548e6ada-f9e5-4154-a2ba-e4c3f123c7a6.jpg" alt="Foto 4" />
+    <figcaption>Dogss de novoo</figcaption>
+  </figure>
+</div>
+
+  <footer>
+    <p>Sei que essa fase que estamos passando é difícil, mas com fé e muito amor, vamos superar isso!
+      Eu te amo muito, Mikaelly. Muito obrigado por esse tempo que estamos juntos, 
+      você vem sempre me ensinando sempre muita coisa, a vida com você do lado é muito mais colorida.
+    </p>
+  </footer>
+
+  <script>
+
+    const startDate = new Date("2024-11-25T00:00:00");
+
+    function updateTimer() {
+      const now = new Date();
+      const diff = now - startDate;
+
+      const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+      const hours = Math.floor((diff / (1000 * 60 * 60)) % 24);
+      const minutes = Math.floor((diff / (1000 * 60)) % 60);
+      const seconds = Math.floor((diff / 1000) % 60);
+
+      document.getElementById("timer").textContent =
+        `Estamos juntos há ${days} dias, ${hours}h ${minutes}min ${seconds}s 💑`;
+    }
+
+    setInterval(updateTimer, 1000);
+    updateTimer();
+
+    function createHeartEmoji() {
+      const heart = document.createElement("div");
+      heart.className = "heart-emoji";
+      heart.textContent = "💖";
+      heart.style.left = Math.random() * 100 + "vw";
+      heart.style.fontSize = (20 + Math.random() * 20) + "px";
+      document.body.appendChild(heart);
+
+      setTimeout(() => {
+        heart.remove();
+      }, 5000);
+    }
+    setInterval(createHeartEmoji, 300);
+  </script>
+</body>
+</html>
